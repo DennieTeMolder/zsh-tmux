@@ -1,11 +1,17 @@
-This is a "fork" of [ohmyzsh/plugins/tmux](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux)
-that uses the `tds` command's logic to generate `$PWD` specific session names
-when `ZSH_TMUX_AUTONAME_SESSION=true`, allowing you to have one session per
-starting directory (handy when opening terminals via a file manager).
-
 # tmux
 
 This plugin provides aliases for [tmux](https://tmux.github.io/), the terminal multiplexer. 
+
+The plugin also supports the following:
+
+- determines if tmux is installed or not, if not, prompts user to install tmux
+- determines if the terminal supports the 256 colors or not, sets the appropriate configuration variable
+- sets the correct local config file to use
+
+This is a "fork" of [ohmyzsh/plugins/tmux](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux)
+that uses the `tds` command's logic to generate `$PWD` specific session names
+when `ZSH_TMUX_AUTONAME_SESSION=true`, allowing you to have directory specific 
+sessions (handy when opening terminals via a file manager).
 
 ## Installation
 ### Zim
@@ -14,13 +20,6 @@ Add the following line somewhere after the `completion` module:
 ```zsh
 zmodule DennieTeMolder/zsh-tmux
 ```
-
-The plugin also supports the following:
-
-- determines if tmux is installed or not, if not, prompts user to install tmux
-- determines if the terminal supports the 256 colors or not, sets the appropriate configuration variable
-- sets the correct local config file to use
-
 ## Aliases
 
 | Alias      | Command                    | Description                                              |
@@ -45,7 +44,7 @@ The plugin also supports the following:
 | `ZSH_TMUX_AUTOQUIT`                 | Automatically closes terminal once tmux exits (default: `ZSH_TMUX_AUTOSTART`)                                                  |
 | `ZSH_TMUX_CONFIG`                   | Set the configuration path (default: `$HOME/.tmux.conf`, `$XDG_CONFIG_HOME/tmux/tmux.conf`)                                    |
 | `ZSH_TMUX_DEFAULT_SESSION_NAME`     | Set tmux default session name when autostart is enabled                                                                        |
-| `ZSH_TMUX_AUTONAME_SESSION`         | Automatically name new sessions based on the basename of `$PWD` (default: `false`)                                             |
+| `ZSH_TMUX_AUTONAME_SESSION`         | Automatically name new sessions based on the `$PWD` (default: `false`)                                                         |
 | `ZSH_TMUX_DETACHED`                 | Set the detached mode (default: `false`)                                                                                       |
 | `ZSH_TMUX_FIXTERM`                  | Sets `$TERM` to 256-color term or not based on current terminal support                                                        |
 | `ZSH_TMUX_FIXTERM_WITHOUT_256COLOR` | `$TERM` to use for non 256-color terminals (default: `tmux` if available, `screen` otherwise)                                  |
