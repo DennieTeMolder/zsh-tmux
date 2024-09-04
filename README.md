@@ -15,7 +15,7 @@ sessions (handy when opening terminals via a file manager).
 
 ## Installation
 ### Zim
-Add the following line somewhere after the `completion` module:
+Add the following line to your `.zimrc` somewhere after the `completion` module:
 
 ```zsh
 zmodule DennieTeMolder/zsh-tmux
