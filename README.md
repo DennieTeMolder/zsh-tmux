@@ -5,11 +5,14 @@ starting directory (handy when opening terminals via a file manager).
 
 # tmux
 
-This plugin provides aliases for [tmux](https://tmux.github.io/), the terminal multiplexer. To use it add
-`tmux` to the plugins array in your zshrc file.
+This plugin provides aliases for [tmux](https://tmux.github.io/), the terminal multiplexer. 
+
+## Installation
+### Zim
+Add the following line somewhere after the `completion` module:
 
 ```zsh
-plugins=(... tmux)
+zmodule DennieTeMolder/zsh-tmux
 ```
 
 The plugin also supports the following:
